@@ -27,7 +27,7 @@ pipeline {
             }
           }
 
-          dir ('./charts/preview') {
+          dir ('./app-1/charts/preview') {
            container('nodejs') {
              sh "make preview"
              sh "jx preview --app $APP_NAME --dir ../.."
@@ -50,7 +50,7 @@ pipeline {
               sh "echo \$(jx-release-version) > VERSION"
             }
           }
-          dir ('./charts/hello-node') {
+          dir ('./app-1/charts/hello-node') {
             container('nodejs') {
               sh "make tag"
             }
@@ -70,7 +70,7 @@ pipeline {
           branch 'master'
         }
         steps {
-          dir ('./charts/hello-node') {
+          dir ('./app-1/charts/hello-node') {
             container('nodejs') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 
