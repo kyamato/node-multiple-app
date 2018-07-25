@@ -3,7 +3,7 @@ pipeline {
         label "jenkins-nodejs"
     }
     environment {
-      ORG               = 'idcf-jenkins'
+      ORG               = 'kyamato'
       APP_NAME          = 'app-1'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
