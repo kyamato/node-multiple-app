@@ -6,10 +6,7 @@ build:
       template: "{{.DOCKER_REGISTRY}}/yhidai/{{.IMAGE_NAME}}:{{.VERSION}}"
   artifacts:
   - imageName: app-1
-    workspace: ./app-1
-    docker: {}
-  - imageName: app-2
-    workspace: ./app-2
+    workspace: .
     docker: {}
   local: {}
 deploy:
@@ -31,9 +28,4 @@ profiles:
         chartPath: charts/app-1
         setValueTemplates:
           image.repository: "{{.DOCKER_REGISTRY}}/yhidai/app-1"
-          image.tag: "{{.TAG}}"
-      - name: app-2
-        chartPath: charts/app-2
-        setValueTemplates:
-          image.repository: "{{.DOCKER_REGISTRY}}/yhidai/app-2"
           image.tag: "{{.TAG}}"
