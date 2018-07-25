@@ -1,5 +1,5 @@
 {
-  "name": "hello-node",
+  "name": "app-1",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yhidai/hello-node.git"
+    "url": "git+https://github.com/yhidai/app-1.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yhidai/hello-node/issues"
+    "url": "https://github.com/yhidai/app-1/issues"
   },
-  "homepage": "https://github.com/yhidai/hello-node#readme"
+  "homepage": "https://github.com/yhidai/app-1#readme"
 }

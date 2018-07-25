@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
       ORG               = 'yhidai'
-      APP_NAME          = 'hello-node'
+      APP_NAME          = 'app-1'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
@@ -50,7 +50,7 @@ pipeline {
               sh "echo \$(jx-release-version) > VERSION"
             }
           }
-          dir ('./app-1/charts/hello-node') {
+          dir ('./app-1/charts/app-1') {
             container('nodejs') {
               sh "make tag"
             }
@@ -70,7 +70,7 @@ pipeline {
           branch 'master'
         }
         steps {
-          dir ('./app-1/charts/hello-node') {
+          dir ('./app-1/charts/app-1') {
             container('nodejs') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 
